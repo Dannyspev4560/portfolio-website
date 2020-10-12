@@ -58,7 +58,7 @@ export const ProjectItem=styled.div`
     border-radius:4px;
     border: 1px solid darkblue;
     margin: 20px;
-    background-color:#314866;
+    background-color:#395063;
     border:1px solid lightgray;
     max-width:260px;
     justify-content:center;
@@ -73,11 +73,12 @@ export const ProjectItem=styled.div`
 
 export const Title = styled.h2`
   color: #fff;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:16px;
+  font-family: 'Montserrat', sans-serif;
   padding:0.5rem;
 `
 export const Image=styled.img`
-    max-width:220px;
+    max-width:180px;
     padding:4px;
     border-radius:50%;
 `
@@ -94,6 +95,9 @@ export const Description = styled.p`
     color: #ccc;
     border-top:1px solid darkgray;
     padding:0.2rem;
+    font-size:14px;
+    height:70px;
+    max-width:220px;
 `
 export const ButtonsWrapper= styled.div`
     padding:0.8rem;
