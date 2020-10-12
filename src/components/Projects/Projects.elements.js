@@ -56,10 +56,10 @@ export const ProjectItems= styled.div`
 
 export const ProjectItem=styled.div`
     border-radius:4px;
-    border: 1px solid darkblue;
+    box-shadow: 0px 5px 5px 0px #181f36;
     margin: 20px;
     background-color:#395063;
-    border:1px solid lightgray;
+    
     max-width:260px;
     justify-content:center;
     align-items:center;
@@ -75,12 +75,15 @@ export const Title = styled.h2`
   color: #fff;
   font-size:16px;
   font-family: 'Montserrat', sans-serif;
-  padding:0.5rem;
+  padding:1rem;
+  padding-top:1.5rem;
+  text-shadow:3px 1px 3px black;
 `
 export const Image=styled.img`
-    max-width:180px;
+    max-width:140px;
     padding:4px;
     border-radius:50%;
+    
 `
 
 export const Date = styled.div`
@@ -93,7 +96,7 @@ export const Date = styled.div`
 
 export const Description = styled.p`
     color: #ccc;
-    border-top:1px solid darkgray;
+    border-top:1px solid #101522;
     padding:0.2rem;
     font-size:14px;
     height:70px;
@@ -104,17 +107,17 @@ export const ButtonsWrapper= styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    border-top:1px solid darkgray;
+    border-top:1px solid #101522;
 `
 export const Button = styled.button`
     border-radius:4px;
     background:#4b59f7;
     color:lightgray;
     margin:auto;
-    font-size:14px;
+    font-size:16px;
     cursor: pointer;
     white-space:nowrap;
-    padding:0.3rem 2rem;
+    padding:0.2rem 2rem;
 
     &:hover{
     transition:all 0.3s ease-out;
@@ -126,4 +129,5 @@ export const Button = styled.button`
 
 export const GitLink=styled.a`
     text-decoration:none;
+    
 `

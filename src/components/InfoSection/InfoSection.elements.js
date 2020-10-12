@@ -51,6 +51,7 @@ margin-bottom:16px;
 
 export const Heading =styled.div`
 margin-bottom:24px;
+text-shadow:${({lightText})=>(lightText ? '':'3px 3px  lightgray')};
 font-size:48px;
 line-height:1.1;
 color:${({lightText})=>(lightText ? '#f7f8fa':'#1c2237')};
@@ -79,6 +80,7 @@ justify-content:${({start})=>(start ? 'flex-start':'flex-end')};
 export const Img = styled.img`
 padding-right:0;
 border:0;
+box-shadow:5px 5px 5px #181f36;
 max-width:100%;
 border-radius:${({round})=>(round ? '100%' : '2px')};
 vertical-align:middle;

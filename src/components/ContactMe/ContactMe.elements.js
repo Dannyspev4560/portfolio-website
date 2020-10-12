@@ -18,10 +18,12 @@ export const FormHeader=styled.h1`
     justify-content:center;
     color:#101522;
     padding-top:22px;
+    text-shadow:3px 3px  lightgray;
 `
 
 export const FormBody=styled.form`
     display:flex;
+    box-shadow:4px 4px  lightgray;
     align-items:center;
     justify-content:center;
     margin:1px;
