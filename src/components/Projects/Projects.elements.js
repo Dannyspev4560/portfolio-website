@@ -50,6 +50,7 @@ export const ProjectItems= styled.div`
         padding:10px;
         width:100%;
         flex-direction:column;
+        align-items:center;
     }
 `
 
@@ -69,6 +70,11 @@ export const ProjectItem=styled.div`
         background-color:#2d415c;
         transition:all 0.2s ease;
     }
+    @media screen and (max-width:500px){
+        
+        width:95%;
+        
+    }
 `
 
 export const Title = styled.h2`
@@ -78,29 +84,42 @@ export const Title = styled.h2`
   padding:1rem;
   padding-top:1.5rem;
   text-shadow:3px 1px 3px black;
+  max-height:60px;
+  @media screen and (max-width:500px){
+        padding:0.6rem;
+        padding-top:1rem;
+    }
+
 `
 export const Image=styled.img`
     max-width:140px;
     padding:4px;
     border-radius:50%;
-    
+    @media screen and (max-width:500px){
+        height:80px;
+        
+    }
 `
 
 export const Date = styled.div`
   color: #ccc;
   font-size: 10px;
-  margin: 6px 0;
+  border-bottom:1px solid #101522;
   padding:0.2rem;
   
 `
 
 export const Description = styled.p`
     color: #ccc;
-    border-top:1px solid #101522;
     padding:0.2rem;
     font-size:14px;
     height:70px;
-    max-width:220px;
+    
+    @media screen and (max-width:500px){
+        height:55px;
+        width:95%;
+        
+    }
 `
 export const ButtonsWrapper= styled.div`
     padding:0.8rem;
@@ -108,6 +127,9 @@ export const ButtonsWrapper= styled.div`
     align-items:center;
     justify-content:center;
     border-top:1px solid #101522;
+    @media screen and (max-width:500px){
+        padding:0.4rem;
+    }
 `
 export const Button = styled.button`
     border-radius:4px;
