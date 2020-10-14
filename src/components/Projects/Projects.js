@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState,useReducer} from 'react'
 import axios from 'axios'
 import {FaGithub} from 'react-icons/fa'
 import {Container} from '../../globalStyles'
@@ -19,19 +19,45 @@ import {ProjectsContainer,
         }from './Projects.elements'
 
 
+const initialState = {  
+            user: {},  
+            loading: true,  
+            error: ''  
+        }  
 
+const reduce = (state, action) => {  
+            switch (action.type) {  
+                case 'OnSuccess':  
+                    return {  
+                        loading: false,  
+                        user: action.payload,  
+                        error: ''  
+                    }  
+                case 'OnFailure':  
+                    return {  
+                        loading: false,  
+                        user: {},  
+                        error: 'Something went wrong'  
+                    }  
+          
+                default:  
+                    return state  
+            }  
+        }  
 
 const Projects = () => {
 
-    const [data,setData]=useState([])
+    const [state,setState]=useReducer(reduce, initialState) 
   
 
     function projects(data){
-        if(data){
+        if(!state.error){
             
             return(
-                <ProjectItems> 
-                    { data.map(proj =>(
+                <div>{state.loading ? 
+                    (<ProjectItems white big>Loading....</ProjectItems>):
+                (<ProjectItems> 
+                    {  data.map(proj =>(
                       <ProjectItem key={proj.id}>
                           <Title>{proj.name}</Title>
                           <Image src={proj.owner.avatar_url} alt="avatar"></Image>
@@ -44,14 +70,12 @@ const Projects = () => {
                         </ButtonsWrapper>
                       </ProjectItem>  
                     ))}
-                </ProjectItems>
+                </ProjectItems>)}
+                </div>
         )}
         else{
-            axios.get(`https://api.github.com/users/Dannyspev4560/repos`)//one more attempt 
-            .then(res => {
-                console.log(res.data)
-                setData(res.data)})
-            return <ProjectItems white big>Loading....</ProjectItems>
+            
+            return <ProjectItems white big>Error...Try Refresh</ProjectItems>
         }
     }
     
@@ -59,10 +83,13 @@ const Projects = () => {
     useEffect(()=>{
         axios.get(`https://api.github.com/users/Dannyspev4560/repos`)
       .then(res => {
+          setState({type:'OnSuccess', payload:res.data})
         console.log(res.data)
-        setData(res.data)
-      })
-    },[]);
+        
+      }).catch(err=>{
+          setState({type:'OnFailure'})
+          console.log(err)})
+    },[initialState.error]);
 
 
 
@@ -78,7 +105,7 @@ const Projects = () => {
                     My Repositories 
                 </SubTitle>
                 <ProjectsWrapper>
-                    {projects(data)}    
+                    {projects(state.user)}    
                 </ProjectsWrapper>
             </Container>
         </ProjectsContainer>
