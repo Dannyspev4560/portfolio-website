@@ -6,6 +6,7 @@ const GlobalStyle=createGlobalStyle`
     margin:0;
     padding:0;
     font-family:'Source Sans pro', sans-serif;
+    
 }
 `
 
@@ -18,7 +19,7 @@ margin-right:auto;
 margin-left:auto;
 padding-left:80px;
 padding-right:80px;
-
+min-width:280px;
 @media screen and (max-width:991px){
     padding-left:20px;
     padding-right:20px;

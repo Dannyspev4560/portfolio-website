@@ -23,7 +23,7 @@ import {ProjectsContainer,
 
 const Projects = () => {
 
-    const [data,setData]=useState('')
+    const [data,setData]=useState([])
   
 
     function projects(data){
@@ -32,7 +32,7 @@ const Projects = () => {
             return(
                 <ProjectItems> 
                     { data.map(proj =>(
-                      <ProjectItem id={proj.id}>
+                      <ProjectItem key={proj.id}>
                           <Title>{proj.name}</Title>
                           <Image src={proj.owner.avatar_url} alt="avatar"></Image>
                         <Date>{ proj.pushed_at.toString().substring(0,10)}</Date>
@@ -46,7 +46,13 @@ const Projects = () => {
                     ))}
                 </ProjectItems>
         )}
-        return <ProjectItems>Loading....</ProjectItems>
+        else{
+            axios.get(`https://api.github.com/users/Dannyspev4560/repos`)//one more attempt 
+            .then(res => {
+                console.log(res.data)
+                setData(res.data)})
+            return <ProjectItems white big>Loading....</ProjectItems>
+        }
     }
     
 

@@ -40,7 +40,8 @@ export const ProjectItems= styled.div`
     max-width:1000px;
     box-sizing:border-box;
     justify-content:space-evenly;
-
+    color:${({white})=>(white ? '#fff': '')};
+    font-size:${({big})=>(big ? '40px': '')};
     @media screen and (max-width:900px){
         flex-wrap: wrap;
     }

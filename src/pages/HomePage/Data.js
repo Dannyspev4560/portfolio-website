@@ -15,7 +15,7 @@ export const homeObjOne={
     img:require('../../images/svg_1.svg'),
     alt:'Its me Mario',
     round:false,
-    start:'',
+    start:false,
     file:true
 }
 
