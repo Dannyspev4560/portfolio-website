@@ -9,6 +9,7 @@
     "axios": "^0.20.0",
     "emailjs": "^3.3.0",
     "emailjs-com": "^2.6.3",
+    "netlify-cli": "^2.68.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-download-link": "^2.3.0",

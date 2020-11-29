@@ -89,7 +89,7 @@ const Projects = () => {
       }).catch(err=>{
           setState({type:'OnFailure'})
           console.log(err)})
-    },[initialState.error]);
+    },[initialState.error]);//when initialState.error updates the useEffect will fire
 
 
 
