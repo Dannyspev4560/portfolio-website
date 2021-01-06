@@ -42,7 +42,7 @@ const InfoSection = ({primary,
     <Heading lightText={lightText}>{headline}</Heading>
     <Subtitle lightTextDesc={lightTextDesc}>{description}
     </Subtitle>
-        <FileToDownload file={file} target="_blank" href="https://drive.google.com/file/d/1lpDmAptaXySrZEz21uvn6GfojYBXmzq4/view?usp=sharing">
+        <FileToDownload file={file} target="_blank" href="https://drive.google.com/file/d/1WnMfNR4G2a6naLB94Kc_VKxuKorNM4Rx/view?usp=sharing">
             <Button  big primary={primary} >
                 {buttonLabel}
             </Button>
